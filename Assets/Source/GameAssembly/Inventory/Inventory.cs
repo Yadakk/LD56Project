@@ -1,0 +1,62 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEditor.Graphs;
+using UnityEngine;
+
+namespace LD56Project.GameAssembly
+{
+    public class Inventory : MonoBehaviour
+    {
+        [SerializeField]
+        private Sprite defaultSlotSprite;
+
+        [SerializeField]
+        private Sprite selectedSlotSprite;
+
+        private Slot[] slots;
+
+        public int SelectedSlotIndex { get; private set; }
+
+        private void Awake()
+        {
+            slots = GetComponentsInChildren<Slot>();
+        }
+
+        private void Start()
+        {
+            foreach (Slot slot in slots)
+            {
+                slot.SetSprite(defaultSlotSprite);
+            }
+
+            SelectSlot(0);
+        }
+
+        public void SelectSlot(int index)
+        {
+            slots[SelectedSlotIndex].SetSprite(defaultSlotSprite);
+            slots[index].SetSprite(selectedSlotSprite);
+        }
+
+        public ItemData GetSelected()
+        {
+            return slots[SelectedSlotIndex].GetData();
+        }
+
+        public bool TryAddItem(ItemData data)
+        {
+            var emptySlot = slots.FirstOrDefault(slot => slot.GetData() == null);
+            if (emptySlot == null) return false;
+            emptySlot.SetData(data);
+            return true;
+        }
+
+        public void RemoveItem(int index)
+        {
+            slots[index].GetItemContainer().SetData(null);
+        }
+    }
+
+}
