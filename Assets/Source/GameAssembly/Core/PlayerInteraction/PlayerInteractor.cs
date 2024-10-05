@@ -38,29 +38,19 @@ namespace LD56Project.GameAssembly
 
         public void OnInteract()
         {
-            ItemData selectedItem = inventory.GetSelected();
-
-            if (selectedItem == null)
+            if (interactibleInCrosshair != null)
             {
                 RaycastInteraction();
                 return;
             }
 
-            switch (selectedItem.Interaction)
-            {
-                case ItemData.InteractionType.Raycast:
-                    RaycastInteraction();
-                    break;
-
-                case ItemData.InteractionType.Use:
-                    ItemUser.UseItem(selectedItem);
-                    break;
-            }  
+            ItemData selectedItem = inventory.GetSelected();
+            ItemUser.UseItem(selectedItem);
         }
 
         private void RaycastInteraction()
         {
-            if (interactibleInCrosshair == null) return;
+            
             interactibleInCrosshair.Interact();
         }
     }

@@ -8,6 +8,8 @@ namespace LD56Project.GameAssembly
     {
         public static void UseItem(ItemData itemData)
         {
+            if (itemData == null) return;
+
             switch(itemData.Usage)
             {
                 case ItemData.UseType.Pill:
