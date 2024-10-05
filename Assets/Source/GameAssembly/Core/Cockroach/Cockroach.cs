@@ -7,6 +7,7 @@ namespace LD56Project.GameAssembly
 {
     public class Cockroach : MonoBehaviour
     {
+        //Serialized
         [SerializeField]
         private float minDistance = 0.5f;
 
@@ -14,47 +15,41 @@ namespace LD56Project.GameAssembly
         private float maxDistance = 2f;
 
         [SerializeField]
-        private float minSpeed = 0.5f;
+        private float minDuration = 0.5f;
 
         [SerializeField]
-        private float maxSpeed = 2f;
+        private float maxDuration = 2f;
 
-        private Transform origin;
-        private Vector3 source;
-        private Vector3 target;
-        private float t;
-        private float speed;
+        //Composition
+        private MoverBetweenPositions mover;
+
+        //Internal
         private float distance;
-
-        private void Awake()
-        {
-            origin = transform.parent;
-            target = NextTarget();
-        }
 
         void Update()
         {
-            if (t >= 1f)
+            Vector3 source = transform.position;
+            Vector3 target = NextTarget();
+            float duration = Random.Range(minDuration, maxDuration);
+
+            mover ??= new(transform, source, target, duration);
+
+            if (!mover.FrameMove())
             {
-                target = NextTarget();
-                t = 0f;
+
+                transform.rotation = Quaternion.LookRotation(target - source, transform.up);
+                mover.SetPoints(source, target);
+                mover.SetDuration(duration);
             }
-
-            t += Time.deltaTime * speed;
-
-            transform.position = Vector3.Lerp(source, target, t);
         }
 
         private Vector3 NextTarget()
         {
-            speed = Random.Range(minSpeed, maxSpeed);
             distance = Random.Range(minDistance, maxDistance);
 
-            source = transform.position;
             Quaternion quaternionDirection = Quaternion.AngleAxis(Random.Range(0f, 360f), transform.up);
             Vector3 direction = quaternionDirection * transform.forward;
-            Vector3 newTarget = origin.position + distance * Random.Range(0f, 1f) * direction;
-            transform.rotation = Quaternion.LookRotation(newTarget - source, transform.up);
+            Vector3 newTarget = transform.parent.position + distance * Random.Range(0f, 1f) * direction;
             return newTarget;
         }
     }
