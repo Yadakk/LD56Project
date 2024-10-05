@@ -14,11 +14,13 @@ namespace LD56Project.GameAssembly
         public string Name { get; private set; }
 
         [field: SerializeField]
+        public bool ConsumedUponUse { get; private set; }
+
+        [field: SerializeField]
         public UseType Usage { get; private set; }
 
         public enum UseType
         {
-            None,
             Pill,
         }
     }

@@ -19,10 +19,11 @@ namespace LD56Project.GameAssembly
             inventory = ServiceLocator.ForSceneOf(this).Get<Inventory>();
         }
 
-        public void Interact()
+        public bool TryInteract()
         {
-            if (!inventory.TryAddItem(itemData)) return;
+            if (!inventory.TryAddItem(itemData)) return false;
             Destroy(gameObject);
+            return true;
         }
     }
 }

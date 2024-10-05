@@ -23,11 +23,14 @@ namespace LD56Project.GameAssembly
             inventory = ServiceLocator.ForSceneOf(this).Get<Inventory>();
         }
 
-        public void Interact()
+        public bool TryInteract()
         {
-            if (inventory.GetSelected() != RequiredItem) return;
-            inventory.RemoveSelected();
+            var selectedItem = inventory.GetSelected();
+            if (selectedItem != RequiredItem) return false;
+
+            if (selectedItem.ConsumedUponUse) inventory.RemoveSelected();
             OnInteract.Invoke();
+            return true;
         }
     }
 }

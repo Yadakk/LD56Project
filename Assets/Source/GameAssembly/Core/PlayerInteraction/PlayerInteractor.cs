@@ -8,15 +8,26 @@ namespace LD56Project.GameAssembly
 {
     public class PlayerInteractor : MonoBehaviour
     {
+        //Serialized
         [SerializeField]
         private float maxDistance = 5f;
 
         [SerializeField]
         private TextMeshProUGUI tmpu;
 
+        //ServiceLocatorGet
         private Inventory inventory;
 
-        IInteractible interactibleInCrosshair;
+        //Internal
+        private IInteractible interactibleInCrosshair;
+
+        //Events
+        public event System.Action<ItemData.UseType> OnItemUsed;
+
+        private void Awake()
+        {
+            ServiceLocator.ForSceneOf(this).Register(this);
+        }
 
         private void Start()
         {
@@ -38,20 +49,25 @@ namespace LD56Project.GameAssembly
 
         public void OnInteract()
         {
+
             if (interactibleInCrosshair != null)
             {
-                RaycastInteraction();
-                return;
+                interactibleInCrosshair.TryInteract();
             }
-
-            ItemData selectedItem = inventory.GetSelected();
-            ItemUser.UseItem(selectedItem);
+            else
+            {
+                UseInteraction();
+            }
         }
 
-        private void RaycastInteraction()
+        private bool UseInteraction()
         {
-            
-            interactibleInCrosshair.Interact();
+            ItemData selectedItem = inventory.GetSelected();
+            if (selectedItem == null) return false;
+
+            if (selectedItem.ConsumedUponUse) inventory.RemoveSelected();
+            OnItemUsed?.Invoke(selectedItem.Usage);
+            return true;
         }
     }
 }

@@ -8,6 +8,6 @@ namespace LD56Project.GameAssembly
     {
         public string Text { get; }
 
-        void Interact();
+        bool TryInteract();
     }
 }
