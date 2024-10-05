@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityServiceLocator;
 
 namespace LD56Project.GameAssembly
@@ -12,6 +13,9 @@ namespace LD56Project.GameAssembly
 
         private Inventory inventory;
 
+        [SerializeField]
+        private UnityEvent OnInteract;
+
         public string Text => "I need " + RequiredItem.Name + " to use that";
 
         private void Start()
@@ -19,10 +23,11 @@ namespace LD56Project.GameAssembly
             inventory = ServiceLocator.ForSceneOf(this).Get<Inventory>();
         }
 
-        public virtual void Interact()
+        public void Interact()
         {
             if (inventory.GetSelected() != RequiredItem) return;
             inventory.RemoveSelected();
+            OnInteract.Invoke();
         }
     }
 }

@@ -1164,6 +1164,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequiredItem: {fileID: 11400000, guid: c44b4e691946083458daa905c9bb9177, type: 2}
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &1284385258
 Rigidbody:
   m_ObjectHideFlags: 0
