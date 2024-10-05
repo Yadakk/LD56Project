@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityServiceLocator;
 
 namespace LD56Project.GameAssembly
 {
     public class SlotScroller : MonoBehaviour
     {
-        [SerializeField]
         private Inventory inventory;
+
+        private void Start()
+        {
+            inventory = ServiceLocator.ForSceneOf(this).Get<Inventory>();
+        }
 
         public void OnScrollSlots(InputValue value)
         {

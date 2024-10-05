@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor.Graphs;
 using UnityEngine;
+using UnityServiceLocator;
 
 namespace LD56Project.GameAssembly
 {
@@ -22,6 +23,8 @@ namespace LD56Project.GameAssembly
         private void Awake()
         {
             slots = GetComponentsInChildren<Slot>();
+
+            ServiceLocator.ForSceneOf(this).Register(this);
         }
 
         private void Start()
