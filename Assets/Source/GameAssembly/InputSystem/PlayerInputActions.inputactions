@@ -1,0 +1,34 @@
+{
+    "name": "PlayerInputActions",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "fe1b8c36-e4b8-4e6e-b3ff-67eac4e2bab9",
+            "actions": [
+                {
+                    "name": "ScrollSlots",
+                    "type": "Value",
+                    "id": "1e722450-dfcf-4aeb-b321-5638ae5c16f7",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fdc0c947-638a-479b-a5cc-662cfdac7590",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScrollSlots",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

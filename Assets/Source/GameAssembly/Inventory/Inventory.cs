@@ -36,8 +36,21 @@ namespace LD56Project.GameAssembly
 
         public void SelectSlot(int index)
         {
+            if (index >= slots.Length || index < 0) return;
+
             slots[SelectedSlotIndex].SetSprite(defaultSlotSprite);
             slots[index].SetSprite(selectedSlotSprite);
+            SelectedSlotIndex = index;
+        }
+
+        public void SelectNext()
+        {
+            SelectSlot(SelectedSlotIndex + 1);
+        }
+
+        public void SelectPrevious()
+        {
+            SelectSlot(SelectedSlotIndex - 1);
         }
 
         public ItemData GetSelected()

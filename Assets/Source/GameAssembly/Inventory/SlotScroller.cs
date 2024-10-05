@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 namespace LD56Project.GameAssembly
 {
     public class SlotScroller : MonoBehaviour
     {
         [SerializeField]
-        private Image slotImage;
+        private Inventory inventory;
 
-        private void Awake()
+        public void OnScrollSlots(InputValue value)
         {
-            slotImage.sprite = null;
+            float scrollDir = value.Get<float>();
+            if (scrollDir > 0) inventory.SelectNext();
+            else if (scrollDir < 0) inventory.SelectPrevious();
         }
     }
 }
