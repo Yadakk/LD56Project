@@ -18,14 +18,14 @@ namespace LD56Project.GameAssembly
 
         public void SetData(ItemData data)
         {
-            if (data.sprite == null)
+            if (data.Sprite == null)
             {
                 image.enabled = false;
             }
             else
             {
                 image.enabled = true;
-                image.sprite = data.sprite;
+                image.sprite = data.Sprite;
             }
 
             this.data = data;
