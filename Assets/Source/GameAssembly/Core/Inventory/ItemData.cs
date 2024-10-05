@@ -11,11 +11,6 @@ namespace LD56Project.GameAssembly
         public Sprite Sprite { get; private set; }
 
         [field: SerializeField]
-        public ItemType Type { get; private set; }
-
-        public enum ItemType
-        {
-            Pill,
-        }
+        public string Name { get; private set; }
     }
 }

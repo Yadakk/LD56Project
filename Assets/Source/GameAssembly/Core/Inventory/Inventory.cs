@@ -61,6 +61,11 @@ namespace LD56Project.GameAssembly
             return slots[SelectedSlotIndex].GetData();
         }
 
+        public void RemoveSelected()
+        {
+            RemoveItem(SelectedSlotIndex);
+        }
+
         public bool TryAddItem(ItemData data)
         {
             var emptySlot = slots.FirstOrDefault(slot => slot.GetData() == null);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling.Memory.Experimental;
 using UnityEngine.UI;
 
 namespace LD56Project.GameAssembly
@@ -18,7 +19,7 @@ namespace LD56Project.GameAssembly
 
         public void SetData(ItemData data)
         {
-            if (data.Sprite == null)
+            if (data == null)
             {
                 image.enabled = false;
             }
