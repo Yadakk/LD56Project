@@ -32,5 +32,28 @@ namespace LD56Project.GameAssembly
             OnInteract.Invoke();
             return true;
         }
+
+        public bool TryInteract(out string message)
+        {
+            message = null;
+
+            var selectedItem = inventory.GetSelected();
+
+            if (selectedItem == null)
+            {
+                message = "I can't use this with bare hands";
+                return false;
+            }
+
+            if (selectedItem != RequiredItem)
+            {
+                message = "This item does not fit here";
+                return false;
+            }
+
+            if (selectedItem.ConsumedUponUse) inventory.RemoveSelected();
+            OnInteract.Invoke();
+            return true;
+        }
     }
 }

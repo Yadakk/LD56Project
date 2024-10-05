@@ -17,6 +17,7 @@ namespace LD56Project.GameAssembly
 
         //ServiceLocatorGet
         private Inventory inventory;
+        private AnimatedText animatedText;
 
         //Internal
         private IInteractible interactibleInCrosshair;
@@ -32,6 +33,7 @@ namespace LD56Project.GameAssembly
         private void Start()
         {
             inventory = ServiceLocator.ForSceneOf(this).Get<Inventory>();
+            animatedText = ServiceLocator.ForSceneOf(this).Get<AnimatedText>();
         }
 
         private void Update()
@@ -49,14 +51,17 @@ namespace LD56Project.GameAssembly
 
         public void OnInteract()
         {
-
             if (interactibleInCrosshair != null)
             {
-                interactibleInCrosshair.TryInteract();
+                interactibleInCrosshair.TryInteract(out string message);
+                animatedText.Animate(message);
             }
             else
             {
-                UseInteraction();
+                if (!UseInteraction())
+                {
+                    animatedText.Animate("I am not holding an item right now");
+                }
             }
         }
 

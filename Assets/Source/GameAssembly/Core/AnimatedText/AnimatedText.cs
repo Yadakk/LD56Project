@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityServiceLocator;
 using TMPro;
 
 namespace LD56Project.GameAssembly
@@ -22,15 +23,14 @@ namespace LD56Project.GameAssembly
         private void Awake()
         {
             tmpu = GetComponent<TextMeshProUGUI>();
-        }
-
-        private void Start()
-        {
-            Animate("Hello World!");
+            ServiceLocator.ForSceneOf(this).Register(this);
         }
 
         public void Animate(string text)
         {
+            if (text == null) return;
+            if (text.Length == 0) return;
+
             CancelInvoke(nameof(HideText));
             StopPrinting();
             ResetColor();
@@ -49,7 +49,7 @@ namespace LD56Project.GameAssembly
             currentCharacter++;
             tmpu.text = currentString[..currentCharacter];
 
-            if (currentCharacter == currentString.Length)
+            if (currentCharacter >= currentString.Length)
             {
                 StopPrinting();
                 InvokeRepeating(nameof(HideText), textDisappearDelay, Time.deltaTime);

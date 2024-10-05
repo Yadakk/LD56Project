@@ -25,5 +25,19 @@ namespace LD56Project.GameAssembly
             Destroy(gameObject);
             return true;
         }
+
+        public bool TryInteract(out string message)
+        {
+            message = null;
+
+            if (!inventory.TryAddItem(itemData))
+            {
+                message = "My inventory is full";
+                return false;
+            }
+
+            Destroy(gameObject);
+            return true;
+        }
     }
 }

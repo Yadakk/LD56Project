@@ -9,5 +9,7 @@ namespace LD56Project.GameAssembly
         public string Text { get; }
 
         bool TryInteract();
+
+        bool TryInteract(out string message);
     }
 }
