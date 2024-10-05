@@ -58,21 +58,19 @@ namespace LD56Project.GameAssembly
             }
             else
             {
-                if (!UseInteraction())
-                {
-                    animatedText.Animate("I am not holding an item right now");
-                }
+                animatedText.Animate(UseInteraction());
             }
         }
 
-        private bool UseInteraction()
+        private string UseInteraction()
         {
             ItemData selectedItem = inventory.GetSelected();
-            if (selectedItem == null) return false;
+            if (selectedItem == null) return "I am not holding an item right now";
+            if (!selectedItem.CanBeUsed) return "I probably need to find an object to use this";
 
             if (selectedItem.ConsumedUponUse) inventory.RemoveSelected();
             OnItemUsed?.Invoke(selectedItem.Usage);
-            return true;
+            return null;
         }
     }
 }

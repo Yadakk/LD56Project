@@ -17,6 +17,12 @@ namespace LD56Project.GameAssembly
         public bool ConsumedUponUse { get; private set; }
 
         [field: SerializeField]
+        public bool CanBeUsed { get; private set; } = true;
+
+        [field: SerializeField]
+        public bool CanBeRaycasted { get; private set; } = true;
+
+        [field: SerializeField]
         public UseType Usage { get; private set; }
 
         public enum UseType

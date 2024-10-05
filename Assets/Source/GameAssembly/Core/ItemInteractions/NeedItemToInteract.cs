@@ -39,6 +39,12 @@ namespace LD56Project.GameAssembly
 
             var selectedItem = inventory.GetSelected();
 
+            if (!selectedItem.CanBeRaycasted)
+            {
+                message = "I can't use this on objects at all";
+                return false;
+            }
+
             if (selectedItem == null)
             {
                 message = "I can't use this with bare hands";
