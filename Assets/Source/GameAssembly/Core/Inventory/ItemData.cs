@@ -12,5 +12,23 @@ namespace LD56Project.GameAssembly
 
         [field: SerializeField]
         public string Name { get; private set; }
+
+        [field: SerializeField]
+        public InteractionType Interaction { get; private set; }
+
+        [field: SerializeField]
+        public UseType Usage { get; private set; }
+
+        public enum InteractionType
+        {
+            Use,
+            Raycast,
+        }
+
+        public enum UseType
+        {
+            None,
+            Pill,
+        }
     }
 }

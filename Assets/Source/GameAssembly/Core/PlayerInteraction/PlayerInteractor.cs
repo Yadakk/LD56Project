@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityServiceLocator;
 using TMPro;
 
 namespace LD56Project.GameAssembly
@@ -14,7 +14,14 @@ namespace LD56Project.GameAssembly
         [SerializeField]
         private TextMeshProUGUI tmpu;
 
+        private Inventory inventory;
+
         IInteractible interactibleInCrosshair;
+
+        private void Start()
+        {
+            inventory = ServiceLocator.ForSceneOf(this).Get<Inventory>();
+        }
 
         private void Update()
         {
@@ -30,6 +37,28 @@ namespace LD56Project.GameAssembly
         }
 
         public void OnInteract()
+        {
+            ItemData selectedItem = inventory.GetSelected();
+
+            if (selectedItem == null)
+            {
+                RaycastInteraction();
+                return;
+            }
+
+            switch (selectedItem.Interaction)
+            {
+                case ItemData.InteractionType.Raycast:
+                    RaycastInteraction();
+                    break;
+
+                case ItemData.InteractionType.Use:
+                    ItemUser.UseItem(selectedItem);
+                    break;
+            }  
+        }
+
+        private void RaycastInteraction()
         {
             if (interactibleInCrosshair == null) return;
             interactibleInCrosshair.Interact();
