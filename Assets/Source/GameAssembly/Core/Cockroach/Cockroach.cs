@@ -36,10 +36,8 @@ namespace LD56Project.GameAssembly
 
             if (!mover.FrameMove())
             {
-
                 transform.rotation = Quaternion.LookRotation(target - source, transform.up);
-                mover.SetPoints(source, target);
-                mover.SetDuration(duration);
+                mover = new(transform, source, target, duration);
             }
         }
 
