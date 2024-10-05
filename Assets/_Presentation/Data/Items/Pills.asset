@@ -16,5 +16,5 @@ MonoBehaviour:
   <Name>k__BackingField: Pills
   <ConsumedUponUse>k__BackingField: 1
   <CanBeUsed>k__BackingField: 1
-  <CanBeRaycasted>k__BackingField: 0
+  <CanBeRaycasted>k__BackingField: 1
   <Usage>k__BackingField: 0
