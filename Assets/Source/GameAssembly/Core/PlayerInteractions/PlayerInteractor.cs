@@ -65,7 +65,7 @@ namespace LD56Project.GameAssembly
         private string UseInteraction()
         {
             ItemData selectedItem = inventory.GetSelected();
-            if (selectedItem == null) return "I am not holding an item right now";
+            if (selectedItem == null) return null;
             if (!selectedItem.CanBeUsed) return "I probably need to find an object to use this";
 
             if (selectedItem.ConsumedUponUse) inventory.RemoveSelected();
