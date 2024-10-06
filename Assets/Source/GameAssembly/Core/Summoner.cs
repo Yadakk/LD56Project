@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityServiceLocator;
@@ -9,14 +11,21 @@ namespace LD56Project.GameAssembly
     public class Summoner : MonoBehaviour, IInteractible
     {
         [SerializeField]
-        private ItemData requiredItem;
+        private List<ItemData> requiredItems;
 
         [SerializeField]
         private string sceneName;
 
         private Inventory inventory;
 
-        public string Text => "I need " + requiredItem.Name + " for the ritual";
+        private List<ItemData> remainingItems;
+
+        public string Text => "I need " + GetRemainingItemNames() + "for the ritual";
+
+        private void Awake()
+        {
+            remainingItems = new(requiredItems);
+        }
 
         private void Start()
         {
@@ -25,9 +34,34 @@ namespace LD56Project.GameAssembly
 
         public bool TryInteract(out string message)
         {
-            if (!ItemRaycastUser.TryUse(inventory, requiredItem, out message)) return false;
-            SceneManager.LoadScene(sceneName);
-            return true;
+            message = null;
+
+            foreach (var item in remainingItems)
+            {
+                if (!ItemRaycastUser.TryUse(inventory, item, out message)) continue;
+                remainingItems.Remove(item);
+
+                if (remainingItems.Count <= 0)
+                {
+                    SceneManager.LoadScene(sceneName);
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        private string GetRemainingItemNames()
+        {
+            StringBuilder builder = new();
+            foreach(var item in remainingItems)
+            {
+                builder.Append(item.Name + ", ");
+            }
+
+            builder.Remove(builder.Length, 1);
+            return builder.ToString();
         }
     }
 }
