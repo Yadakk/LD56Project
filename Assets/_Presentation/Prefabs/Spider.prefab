@@ -136,8 +136,8 @@ MonoBehaviour:
   maxDistance: 3.5
   minDurationDown: 0.2
   maxDurationDown: 0.3
-  minDurationUp: 1
-  maxDurationUp: 1
+  minDurationUp: 3
+  maxDurationUp: 4
 --- !u!136 &4293366220097811966
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
-  m_Height: 10
+  m_Radius: 3
+  m_Height: 15
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
