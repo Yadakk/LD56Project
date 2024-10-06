@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace LD56Project.GameAssembly
 {
-    public static class ItemRaycastChecker
+    public static class ItemRaycastUser
     {
-        public static bool Check(Inventory inventory, ItemData requiredItem, out string message)
+        public static bool TryUse(Inventory inventory, ItemData requiredItem, out string message)
         {
             message = null;
 

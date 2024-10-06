@@ -6,6 +6,7 @@ using UnityServiceLocator;
 
 namespace LD56Project.GameAssembly
 {
+    [RequireComponent(typeof(Animator))]
     public class OpenClosable : MonoBehaviour, IInteractible
     {
         [SerializeField]
@@ -14,7 +15,6 @@ namespace LD56Project.GameAssembly
         [SerializeField]
         private bool isLocked;
 
-        [SerializeField]
         private bool isOpen;
 
         private Inventory inventory;
@@ -49,7 +49,7 @@ namespace LD56Project.GameAssembly
 
         private bool TryUnlock(out string message)
         {
-            if (!ItemRaycastChecker.Check(inventory, requiredItem, out message)) return false;
+            if (!ItemRaycastUser.TryUse(inventory, requiredItem, out message)) return false;
             isLocked = false;
             return true;
         }
