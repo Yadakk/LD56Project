@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.35
+  m_FogDensity: 0.23
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
@@ -450,7 +450,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a8c62a71229c2b04097bd32bd0525c52, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 97a6446f9d5434e488d3e84ee9841e45, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -654,7 +654,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2475,7 +2475,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2933,7 +2933,7 @@ MonoBehaviour:
   itemData: {fileID: 11400000, guid: c972291dc6cc567489f3c7327307deb0, type: 2}
   pickSound: {fileID: 8300000, guid: 0175b16459afac945a0794fc040bf783, type: 3}
   audioSource: {fileID: 1546193832}
-  pickupDialogue: 
+  pickupDialogue: A key... Is it for that door?
 --- !u!82 &620090332
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4465,7 +4465,7 @@ MonoBehaviour:
   itemData: {fileID: 11400000, guid: 2d4c5c3cd40ff6742b70f8b7e0e32c1f, type: 2}
   pickSound: {fileID: 8300000, guid: b133cd743086b6f4f88a0eab4a00321c, type: 3}
   audioSource: {fileID: 1546193832}
-  pickupDialogue: 
+  pickupDialogue: Someone's diary... Signed by Ann... I wonder who that is...
 --- !u!82 &999142395
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5266,7 +5266,7 @@ MonoBehaviour:
   itemData: {fileID: 11400000, guid: c44b4e691946083458daa905c9bb9177, type: 2}
   pickSound: {fileID: 8300000, guid: 8760a4fce942b8244984d5517fce46e3, type: 3}
   audioSource: {fileID: 1546193832}
-  pickupDialogue: 
+  pickupDialogue: Finally, maybe this will dull the pain for a while...
 --- !u!65 &1201445362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5533,7 +5533,7 @@ MonoBehaviour:
   itemData: {fileID: 11400000, guid: d597b431ca5effe499c2ff90d8f7fcd0, type: 2}
   pickSound: {fileID: 8300000, guid: eebdc60b32e633b4897de5637aa661c4, type: 3}
   audioSource: {fileID: 1546193832}
-  pickupDialogue: 
+  pickupDialogue: That brings some memories...
 --- !u!82 &1206973122
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9364,7 +9364,7 @@ MonoBehaviour:
   itemData: {fileID: 11400000, guid: 9cfd9699a013d7c45b45ed955a3bfc38, type: 2}
   pickSound: {fileID: 8300000, guid: b133cd743086b6f4f88a0eab4a00321c, type: 3}
   audioSource: {fileID: 1546193832}
-  pickupDialogue: 
+  pickupDialogue: Cigs? That's strange, I never smoked
 --- !u!114 &1846457621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10185,7 +10185,7 @@ MonoBehaviour:
   itemData: {fileID: 11400000, guid: da7a6ca6610177e4e8e74e438dc5d0c5, type: 2}
   pickSound: {fileID: 8300000, guid: f77e3f0a4f1446140bcca52a7591cd47, type: 3}
   audioSource: {fileID: 1546193832}
-  pickupDialogue: 
+  pickupDialogue: A knife... It's oddly clean and sharp
 --- !u!114 &2021175032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10445,7 +10445,7 @@ MonoBehaviour:
   itemData: {fileID: 11400000, guid: abaa5ce095e03914abaef603de852add, type: 2}
   pickSound: {fileID: 8300000, guid: 4f0cd3d79512a5342be7d73f5c55bed9, type: 3}
   audioSource: {fileID: 1546193832}
-  pickupDialogue: 
+  pickupDialogue: A photo with me and someone else... They seem oddly familiar...
 --- !u!82 &2030416296
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18422,7 +18422,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 17f7791649ef8dc45b97968bbc5aee56, type: 2}
+  - {fileID: 2100000, guid: d4c0043e0796faf4d9b76f2ca5d72a87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
