@@ -18,10 +18,17 @@ namespace LD56Project.GameAssembly
         [SerializeField]
         private AudioSource audioSource;
 
+        [SerializeField]
+        [TextArea]
+        private string pickupDialogue;
+
+        private AnimatedText animatedText;
+
         public string Text => "Pick up " + itemData.Name;
 
         private void Start()
         {
+            animatedText = ServiceLocator.ForSceneOf(this).Get<AnimatedText>();
             inventory = ServiceLocator.ForSceneOf(this).Get<Inventory>();
         }
 
@@ -36,6 +43,7 @@ namespace LD56Project.GameAssembly
             }
 
             if (pickSound != null) audioSource.PlayOneShot(pickSound);
+            animatedText.Animate(pickupDialogue);
             Destroy(gameObject);
             return true;
         }
