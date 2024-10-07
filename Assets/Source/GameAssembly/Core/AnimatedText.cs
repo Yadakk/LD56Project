@@ -15,6 +15,12 @@ namespace LD56Project.GameAssembly
         [SerializeField]
         private float textDisappearDelay = 5f;
 
+        [SerializeField]
+        private AudioSource sfxSource;
+
+        [SerializeField]
+        private AudioClip[] audioClipArr;
+
         private TextMeshProUGUI tmpu;
 
         private string currentString;
@@ -37,6 +43,8 @@ namespace LD56Project.GameAssembly
             currentCharacter = 0;
             currentString = text;
             InvokeRepeating(nameof(NextChar), 0f, characterRate);
+            sfxSource.clip = audioClipArr[Random.Range(0, 8)];
+            sfxSource.Play();
         }
 
         private void StopPrinting()

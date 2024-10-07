@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 2772744380369416987}
   serializedVersion: 2
   m_LocalRotation: {x: 0.49920171, y: 0.5007971, z: 0.5007971, w: -0.49920171}
-  m_LocalPosition: {x: -0.6650407, y: 0.28094912, z: 1.1871865}
+  m_LocalPosition: {x: -0.6650407, y: 0.2809491, z: 1.187}
   m_LocalScale: {x: 0.14956994, y: 0.31913114, z: 0.17378527}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -175,6 +175,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1531095379348617964}
+  - component: {fileID: 6747226104632982166}
+  - component: {fileID: 6034577086926575403}
+  - component: {fileID: -3912721311707548583}
   m_Layer: 0
   m_Name: Drawers2
   m_TagString: Untagged
@@ -199,3 +202,63 @@ Transform:
   - {fileID: 7356006194311186387}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &6747226104632982166
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5654272527684434462}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8ba94bc8e5d6d6439c77828a291bc04, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6034577086926575403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5654272527684434462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab472bbd6a6363342a7e2badf02c483b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredItem: {fileID: 0}
+  isLocked: 0
+  sfxSource: {fileID: 0}
+  sfx:
+  - {fileID: 8300000, guid: 0afd28571a379624687f6ba93a3840f7, type: 3}
+  - {fileID: 8300000, guid: b378bfc485485bc4ab3fe57874ad530c, type: 3}
+--- !u!65 &-3912721311707548583
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5654272527684434462}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5573957, y: 0.4286828, z: 0.237041}
+  m_Center: {x: -0.6713022, y: 0.2143414, z: 1.1425567}
