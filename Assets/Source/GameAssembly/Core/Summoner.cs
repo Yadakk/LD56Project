@@ -20,7 +20,7 @@ namespace LD56Project.GameAssembly
 
         private List<ItemData> remainingItems;
 
-        public string Text => "I need " + GetRemainingItemNames() + "for the ritual";
+        public string Text => "I need " + GetRemainingItemNames() + " for the ritual";
 
         private void Awake()
         {
@@ -43,6 +43,7 @@ namespace LD56Project.GameAssembly
 
                 if (remainingItems.Count <= 0)
                 {
+                    Cursor.lockState = CursorLockMode.None;
                     SceneManager.LoadScene(sceneName);
                 }
 
@@ -60,7 +61,11 @@ namespace LD56Project.GameAssembly
                 builder.Append(item.Name + ", ");
             }
 
-            builder.Remove(builder.Length, 1);
+            if (builder.Length - 2 >= 0)
+            {
+                builder.Remove(builder.Length - 2, 2);
+            }
+
             return builder.ToString();
         }
     }

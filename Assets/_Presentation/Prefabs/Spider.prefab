@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 856228204728665523}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 954016474252909635}
   - component: {fileID: 412092441874946580}
   - component: {fileID: 4293366220097811966}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
