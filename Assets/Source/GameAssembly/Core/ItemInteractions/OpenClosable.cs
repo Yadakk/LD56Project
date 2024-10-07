@@ -15,6 +15,12 @@ namespace LD56Project.GameAssembly
         [SerializeField]
         private bool isLocked;
 
+        [SerializeField]
+        private AudioSource sfxSource;
+
+        [SerializeField]
+        private AudioClip[] sfx;
+
         private bool isOpen;
 
         private Inventory inventory;
@@ -58,6 +64,15 @@ namespace LD56Project.GameAssembly
         {
             isOpen = !isOpen;
             animator.SetBool("IsOpen", isOpen);
+            if(isOpen)
+            {
+                sfxSource.clip = sfx[0];
+            }
+            else
+            {
+                sfxSource.clip = sfx[1];
+            }
+            sfxSource.Play();
         }
     }
 }
