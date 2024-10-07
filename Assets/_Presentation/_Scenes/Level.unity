@@ -7201,7 +7201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fc388ac12c1bf4a950b3a2cc4fb719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 2
+  maxDistance: 3
   tmpu: {fileID: 1855244364}
 --- !u!114 &1637759349
 MonoBehaviour:
