@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bc74be6996a334c976a8e114ffa325, type: 3}
   m_Name: Pills
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 665b0505e787bb24f832b9225ae86059, type: 3}
   <UseSound>k__BackingField: {fileID: 8300000, guid: a1b41911661be5f4e9965cd135f38132, type: 3}
   <Name>k__BackingField: Pills
   <ConsumedUponUse>k__BackingField: 1
