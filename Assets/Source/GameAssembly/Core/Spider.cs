@@ -69,7 +69,7 @@ namespace LD56Project.GameAssembly
             float duration;
 
             Vector3 source = transform.parent.position;
-            Vector3 target = transform.parent.position - transform.up * distance;
+            Vector3 target = transform.parent.position - Vector3.up * distance;
 
             switch (direction)
             {
