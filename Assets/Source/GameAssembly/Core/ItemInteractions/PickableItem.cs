@@ -15,14 +15,10 @@ namespace LD56Project.GameAssembly
 
         private Inventory inventory;
 
+        [SerializeField]
         private AudioSource audioSource;
 
         public string Text => "Pick up " + itemData.Name;
-
-        private void Awake()
-        {
-            if (pickSound != null) audioSource = GetComponent<AudioSource>();
-        }
 
         private void Start()
         {
