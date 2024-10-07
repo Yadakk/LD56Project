@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Pills
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  <UseSound>k__BackingField: {fileID: 8300000, guid: a1b41911661be5f4e9965cd135f38132, type: 3}
   <Name>k__BackingField: Pills
   <ConsumedUponUse>k__BackingField: 1
   <CanBeUsed>k__BackingField: 1
-  <CanBeRaycasted>k__BackingField: 1
+  <CanBeRaycasted>k__BackingField: 0
   <Usage>k__BackingField: 0

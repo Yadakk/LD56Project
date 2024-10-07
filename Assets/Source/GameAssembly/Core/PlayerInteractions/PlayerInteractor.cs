@@ -6,6 +6,7 @@ using TMPro;
 
 namespace LD56Project.GameAssembly
 {
+    [RequireComponent(typeof(AudioSource))]
     public class PlayerInteractor : MonoBehaviour
     {
         //Serialized
@@ -19,6 +20,9 @@ namespace LD56Project.GameAssembly
         private Inventory inventory;
         private AnimatedText animatedText;
 
+        //GetComponent
+        private AudioSource audioSource;
+
         //Internal
         private IInteractible interactibleInCrosshair;
 
@@ -27,6 +31,7 @@ namespace LD56Project.GameAssembly
 
         private void Awake()
         {
+            audioSource = GetComponent<AudioSource>();
             ServiceLocator.ForSceneOf(this).Register(this);
         }
 
@@ -69,6 +74,7 @@ namespace LD56Project.GameAssembly
             if (!selectedItem.CanBeUsed) return "I probably need to find an object to use this";
 
             if (selectedItem.ConsumedUponUse) inventory.RemoveSelected();
+            if (selectedItem.UseSound != null) audioSource.PlayOneShot(selectedItem.UseSound);
             OnItemUsed?.Invoke(selectedItem.Usage);
             return null;
         }

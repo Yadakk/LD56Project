@@ -10,9 +10,19 @@ namespace LD56Project.GameAssembly
         [SerializeField]
         private ItemData itemData;
 
+        [SerializeField]
+        private AudioClip pickSound;
+
         private Inventory inventory;
 
+        private AudioSource audioSource;
+
         public string Text => "Pick up " + itemData.Name;
+
+        private void Awake()
+        {
+            if (pickSound != null) audioSource = GetComponent<AudioSource>();
+        }
 
         private void Start()
         {
@@ -29,6 +39,7 @@ namespace LD56Project.GameAssembly
                 return false;
             }
 
+            if (pickSound != null) audioSource.PlayOneShot(pickSound);
             Destroy(gameObject);
             return true;
         }

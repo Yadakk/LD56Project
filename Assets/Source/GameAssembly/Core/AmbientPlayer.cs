@@ -12,7 +12,7 @@ namespace LD56Project.GameAssembly
         private AudioClip[] ambientArr;
         private void Awake()
         {
-            ambientSource.clip = ambientArr[Random.Range(0,2)];
+            ambientSource.clip = ambientArr[Random.Range(0, ambientArr.Length)];
             ambientSource.loop = true;
             ambientSource.Play();
         }

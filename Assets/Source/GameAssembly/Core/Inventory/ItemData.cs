@@ -11,6 +11,9 @@ namespace LD56Project.GameAssembly
         public Sprite Sprite { get; private set; }
 
         [field: SerializeField]
+        public AudioClip UseSound { get; private set; }
+
+        [field: SerializeField]
         public string Name { get; private set; }
 
         [field: SerializeField]
