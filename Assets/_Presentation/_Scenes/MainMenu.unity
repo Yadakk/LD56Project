@@ -611,7 +611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -10}
+  m_AnchoredPosition: {x: 20, y: -20}
   m_SizeDelta: {x: 210, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &658579853
@@ -634,7 +634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tiny horror game where you have to find items
+  m_text: Forgotten
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 72b8805616add624fa6143749bb13924, type: 2}
   m_sharedMaterial: {fileID: 1749309725495787379, guid: 72b8805616add624fa6143749bb13924, type: 2}
