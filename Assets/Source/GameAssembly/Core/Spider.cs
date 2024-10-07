@@ -31,12 +31,22 @@ namespace LD56Project.GameAssembly
         [SerializeField]
         private float maxDurationUp = 1f;
 
+        [SerializeField]
+        private AudioSource sfxSource;
+        [SerializeField]
+        private AudioClip sfx;
+
         private MoverBetweenPositions mover;
 
         private MovementDirection direction = MovementDirection.None;
 
         private float distance;
+        private bool hasBeenTriggered;
 
+        private void Awake()
+        {
+            hasBeenTriggered = false;
+        }
         private void Update()
         {
             if (direction == MovementDirection.None) return;
@@ -60,8 +70,11 @@ namespace LD56Project.GameAssembly
         {
             if (!triggerLayers.HasLayer(other.gameObject.layer)) return;
             if (direction != MovementDirection.None) return;
+            if (hasBeenTriggered) return;
             distance = Random.Range(minDistance, maxDistance);
             SetDirection(MovementDirection.Down);
+            hasBeenTriggered = true;
+            sfxSource.PlayOneShot(sfx);
         }
 
         private void SetDirection(MovementDirection direction)
