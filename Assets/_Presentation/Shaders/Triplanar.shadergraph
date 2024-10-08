@@ -20,9 +20,6 @@
         },
         {
             "m_Id": "295f05a7c0e24e45bcc94e03bf0c81e0"
-        },
-        {
-            "m_Id": "3330d65730844940bb03a112a8b0bfb2"
         }
     ],
     "m_Keywords": [],
@@ -691,29 +688,6 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "VertexDescription.Tangent"
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.BooleanShaderProperty",
-    "m_ObjectId": "3330d65730844940bb03a112a8b0bfb2",
-    "m_Guid": {
-        "m_GuidSerialized": "0683985b-d1bb-43d7-90dd-298e93779b64"
-    },
-    "m_Name": "WorldTied",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "WorldTied",
-    "m_DefaultReferenceName": "_WorldTied",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": false
 }
 
 {
@@ -2161,9 +2135,6 @@
         },
         {
             "m_Id": "295f05a7c0e24e45bcc94e03bf0c81e0"
-        },
-        {
-            "m_Id": "3330d65730844940bb03a112a8b0bfb2"
         }
     ]
 }
