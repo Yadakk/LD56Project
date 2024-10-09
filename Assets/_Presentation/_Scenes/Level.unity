@@ -8960,7 +8960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1990733170039560373, guid: 50a77a42ab6395748a26562b76fb5441, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.1666666
+      value: -1.2066
       objectReference: {fileID: 0}
     - target: {fileID: 1990733170039560373, guid: 50a77a42ab6395748a26562b76fb5441, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8993,6 +8993,10 @@ PrefabInstance:
     - target: {fileID: 6584296441513902602, guid: 50a77a42ab6395748a26562b76fb5441, type: 3}
       propertyPath: m_Name
       value: Drawers (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6584296441513902602, guid: 50a77a42ab6395748a26562b76fb5441, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26066,15 +26070,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1990733170039560373, guid: 50a77a42ab6395748a26562b76fb5441, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.585
+      value: -0.5207
       objectReference: {fileID: 0}
     - target: {fileID: 1990733170039560373, guid: 50a77a42ab6395748a26562b76fb5441, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.06
+      value: 0.0722
       objectReference: {fileID: 0}
     - target: {fileID: 1990733170039560373, guid: 50a77a42ab6395748a26562b76fb5441, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.216
+      value: -1.2052
       objectReference: {fileID: 0}
     - target: {fileID: 1990733170039560373, guid: 50a77a42ab6395748a26562b76fb5441, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26107,6 +26111,10 @@ PrefabInstance:
     - target: {fileID: 6584296441513902602, guid: 50a77a42ab6395748a26562b76fb5441, type: 3}
       propertyPath: m_Name
       value: Drawers
+      objectReference: {fileID: 0}
+    - target: {fileID: 6584296441513902602, guid: 50a77a42ab6395748a26562b76fb5441, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7017262403981204845, guid: 50a77a42ab6395748a26562b76fb5441, type: 3}
       propertyPath: m_IsTrigger
